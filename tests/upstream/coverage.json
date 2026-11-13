@@ -1,0 +1,1627 @@
+{
+  "python:tests/test_bitmasks.py:test_bit_masks": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "IDL bitmask generation is not implemented.",
+    "sources": []
+  },
+  "python:tests/test_bitmasks.py:test_bit_mask_serialisation": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "IDL bitmask generation is not implemented.",
+    "sources": []
+  },
+  "python:tests/test_communication.py:test_communication_basic_read": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-communication-read"
+    ],
+    "reason": "Same-key samples verify payload/order and read versus take cache semantics.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_communication.py:test_communication_basic_take": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-communication-take"
+    ],
+    "reason": "Same-key samples verify payload/order and read versus take cache semantics.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_communication.py:test_communication_order": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-communication-order"
+    ],
+    "reason": "Same-key samples verify payload/order and read versus take cache semantics.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_communication.py:test_communication_read_nodestroys": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-communication-read-preserves"
+    ],
+    "reason": "Same-key samples verify payload/order and read versus take cache semantics.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_communication.py:test_communication_take_destroys": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-communication-take-consumes"
+    ],
+    "reason": "Same-key samples verify payload/order and read versus take cache semantics.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_runs": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_runs_json": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_runs": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_runs_json": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_runs": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_runs_json": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_runs": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_runs_json": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_json_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_json_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_json_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_json_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_json_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_json_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_json_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_watch_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_watch_json_reported": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_write_to_file": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_write_disposed_data_to_file": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_domain_id": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_qos_change": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_qos_change_in_verbose": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_file_open_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_dynamic.py:test_dynamic_subscribe": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_dynamic.py:test_dynamic_subscribe_complex": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_dynamic.py:test_dynamic_publish_complex": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_dynamic.py:test_dynamic_repeated_typedef_array": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_pubsub_empty": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_pubsub_topics": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_parse_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_parse_qos_compatible_expressions": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_qos_special_cases": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_topic_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_topic_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_publisher_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_publisher_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_subscriber_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_subscriber_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_writer_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_writer_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_reader_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_reader_multiple_qoses": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_qos_help": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_write_to_file": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_not_applicable_entity_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_incompatible_qos": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_qos_policy_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_multiple_qos_policy_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_qos_policy_arguments_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_qos_policy_arguments_number_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_subqos_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_incompatible_qos_value": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_input_data_error_msg": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_select_eqos_without_qos_definitions": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_file_open_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_pubsub.py:test_input_syntax_error": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_create": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_topic": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_subscriber": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_publisher": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_datareader": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_datawriter": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_qos_provider.py:test_qos_provider_get_participant": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "python:tests/test_querycondition.py:test_querycondition_init": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-query-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_querycondition.py:test_querycondition_get_mask": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-query-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_querycondition.py:test_querycondition_get_reader": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-query-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_readcondition.py:test_readcondition_init": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-read-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_readcondition.py:test_readcondition_get_mask": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-read-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_readcondition.py:test_readcondition_get_reader": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-read-masks"
+    ],
+    "reason": "Every one of the 128 state masks is checked against a four-instance oracle; Java uses SQL predicates for queries.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_reader_resizebuffer": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-empty-buffer-resize"
+    ],
+    "reason": "Normative Java equivalent; unlimited count is -1 in Java, and invalid samples expose their key through getKeyValue.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_reader_invalid": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-invalid-read-count"
+    ],
+    "reason": "Normative Java equivalent; unlimited count is -1 in Java, and invalid samples expose their key through getKeyValue.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_reader_keyless_mutable_dispose": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-keyless-mutable-dispose"
+    ],
+    "reason": "Normative Java equivalent; unlimited count is -1 in Java, and invalid samples expose their key through getKeyValue.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_reader_many_instances": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-read-next-many-instances"
+    ],
+    "reason": "Normative Java equivalent; unlimited count is -1 in Java, and invalid samples expose their key through getKeyValue.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_get_matched_publication_data": {
+    "status": "adapted",
+    "ctest": [
+      "omg-discovery"
+    ],
+    "reason": "Normative Java matched endpoint metadata APIs; independent C peer verifies keys, names, type names and remote QoS snapshots.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/OmgDiscoveryTest.java"
+    ]
+  },
+  "python:tests/test_statistics.py:test_create_statistics": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Cyclone statistics have no Java implementation.",
+    "sources": []
+  },
+  "python:tests/test_statistics.py:test_refresh_statistics": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Cyclone statistics have no Java implementation.",
+    "sources": []
+  },
+  "python:tests/test_typeobjects.py:test_type_objects_and_mappings": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_typeobjects.py:test_deduplication_of_minimal_typeids_in_typeinfo": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_xcdr1_optional.py:test_xcdr1_optional": {
+    "status": "adapted",
+    "ctest": [
+      "xcdr1"
+    ],
+    "reason": "Optional-before-key XCDR1 values, absent and present, are exchanged bidirectionally with an independent C peer; includes parameter-relative alignment and large mutable members.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/Xcdr1Test.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.plus": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-add"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.plus_is": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-add"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.minus": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-subtract"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.minus_is": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-subtract"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.times": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "The normative OMG Java Duration API has no multiplication or division operation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.times_is": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "The normative OMG Java Duration API has no multiplication or division operation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.divide": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "The normative OMG Java Duration API has no multiplication or division operation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.nanosec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-duration-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.microsec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-duration-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.millisec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-duration-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.sec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-duration-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.greater": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.greater_then": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.equals": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.not_equals": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.less_then": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.less": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Duration.cpp:Duration.compare": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-duration-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTestType1.writer_reader_default_qos_write_cdr": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.writer_reader_valid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.writer_reader_default_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.writer_valid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.reader_valid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.invalid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.writer_invalid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.reader_invalid_iox_qos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.reliable_reader_does_not_match_best_effort_writer": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.best_effort_reader_receives_data_from_reliable_writer_via_iox": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.tl_reader_with_lower_history_depth_receives_data_via_iox": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.tl_reader_with_larger_history_depth_receives_data_via_iox": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.tl_reader_does_not_match_volatile_writer": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Iceoryx.cpp:IceoryxTest.loan_sample": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Java does not implement the upstream shared-memory loan behavior; core feature guards determine whether this suite runs upstream.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.participantQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.publisherQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.subscriberQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.dataWriterQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.dataReaderQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.topicQos": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.invalid_scope": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/QosProvider.cpp:QosProvider.invalid_access_scope": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "XML QoS profile loading requires a QoS provider implementation.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_autodispose_no_dispose_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-auto-unregister-only"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_autodispose_dispose_no_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-auto-dispose-only"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_autodispose_dispose_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-auto-both"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_no_autodispose_no_dispose_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-manual-unregister-only"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_no_autodispose_dispose_no_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-manual-dispose-only"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/SampleInfo.cpp:Sample_Info.rank_and_generation_count_no_autodispose_dispose_unregister": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-generations-auto-both",
+      "upstream-generations-manual-both"
+    ],
+    "reason": "Two keys and depth two: sample ranks, disposed/no-writer generations, generation ranks and handles. The upstream last case enables autodispose despite its name; Java tests both settings.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamReaderTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.plus": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-add"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.plus_is": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-add"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.minus": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-subtract"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.minus_is": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-subtract"
+    ],
+    "reason": "Java add/subtract methods replace C++ operators; durations are immutable.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.nanosec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-time-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.microsec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-time-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.millisec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-time-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.sec": {
+    "status": "partial",
+    "ctest": [
+      "upstream-time-units"
+    ],
+    "reason": "Unit conversions covered; Java has no seconds/nanoseconds field setters or floating-point-seconds API.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.greater": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.greater_then": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.equals": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.not_equals": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.less_then": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.less": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Time.cpp:Time.compare": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-time-compare"
+    ],
+    "reason": "All nine seconds/nanoseconds comparisons exercised through compareTo/equals.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamValuesTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/TopicTypeDiscovery.cpp:TopicTypeDiscovery.blobs": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/TopicTypeDiscovery.cpp:TopicTypeDiscovery.typemap": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/TopicTypeDiscovery.cpp:TopicTypeDiscovery.typeinfo": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/TopicTypeDiscovery.cpp:TopicTypeDiscovery.typeID": {
+    "status": "missing",
+    "ctest": [],
+    "reason": "Runtime type discovery/introspection is not equivalent to generated static TypeSupport metadata.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_participant_json_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_subscription_json_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_publication_json_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_watch_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_all_entities_watch_json_reported.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_write_disposed_data_to_file.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_qos_change.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_ddsls.py:test_ddsls_qos_change_in_verbose.test_inner": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Tests the Python DDS command-line application, which is not shipped by this Java binding; not a Java API scenario.",
+    "sources": []
+  },
+  "python:tests/test_entity.py:test_get_parent": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links"
+    ],
+    "reason": "Normative parent/topic getters and nonzero domain ID checked across all entity kinds.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_entity.py:test_get_pubsub": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links"
+    ],
+    "reason": "Normative parent/topic getters and nonzero domain ID checked across all entity kinds.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_entity.py:test_get_domain_id": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links"
+    ],
+    "reason": "Normative parent/topic getters and nonzero domain ID checked across all entity kinds.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_reader.py:test_get_matched_publications": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-matched-endpoint-sets"
+    ],
+    "reason": "Each of 21 readers reports the matched writer handle.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_writer.py:test_writer_lookup": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-registration-keys"
+    ],
+    "reason": "Two distinct keys are absent before registration and stable after non-key mutation; key recovery and reader identity are checked.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_writer.py:test_get_matched_subscriptions": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-matched-endpoint-sets"
+    ],
+    "reason": "Deterministic 21-reader set, every reader/writer identity, immutable snapshot and cleanup replace the random upstream endpoint count.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "python:tests/test_writer.py:test_get_matched_subscription_data": {
+    "status": "adapted",
+    "ctest": [
+      "omg-discovery"
+    ],
+    "reason": "Normative Java matched endpoint metadata APIs; independent C peer verifies keys, names, type names and remote QoS snapshots.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/OmgDiscoveryTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Bounded.cpp:Bounds.strings": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-bounds-strings"
+    ],
+    "reason": "Sizes 0, 1, 254 and 255 traverse DDS; 256 is rejected by Java setters and mutable-sequence serializers. Java immutable strings cannot bypass their setter.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamBoundsTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Bounded.cpp:Bounds.sequence": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-bounds-sequence"
+    ],
+    "reason": "Sizes 0, 1, 254 and 255 traverse DDS; 256 is rejected by Java setters and mutable-sequence serializers. Java immutable strings cannot bypass their setter.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamBoundsTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Bounded.cpp:Bounds.boolean": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-bounds-boolean"
+    ],
+    "reason": "Sizes 0, 1, 254 and 255 traverse DDS; 256 is rejected by Java setters and mutable-sequence serializers. Java immutable strings cannot bypass their setter.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamBoundsTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CDRStreamer.cpp:CDRStreamer.cdr_boundary": {
+    "status": "partial",
+    "ctest": [
+      "upstream-cdr-truncated-payload"
+    ],
+    "reason": "Independent malformed wire vectors; Java has a growable writer. Full streamer assertion and parameter parity still needs review; end-to-end XCDR1 is separately covered by xcdr1.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamCdrTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CDRStreamer.cpp:CDRStreamer.cdr_reject_oversized_nested_read_limits": {
+    "status": "partial",
+    "ctest": [
+      "upstream-cdr-nested-read-limits"
+    ],
+    "reason": "Independent malformed wire vectors; Java has a growable writer. Full streamer assertion and parameter parity still needs review; end-to-end XCDR1 is separately covered by xcdr1.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamCdrTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.null": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "C++ nullable entity wrapper construction has no Java entity constructor equivalent.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.create_multiple": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.non_default_constructor": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.participant": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.default__qos": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-default-endpoint-qos"
+    ],
+    "reason": "Default changes affect future endpoints and preserve existing endpoints and immutable QoS snapshots.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.use_after_close": {
+    "status": "partial",
+    "ctest": [
+      "upstream-close-cascade"
+    ],
+    "reason": "Closed getters and recursive containment checked; the full upstream list of closed operations is not yet ported. Java close is idempotent.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Publisher.cpp:Publisher.use_after_deletion": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Dereferencing the C++ null entity wrapper has no Java DDS method dispatch equivalent; Java null dereference is specified by the JVM.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.null": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "C++ nullable entity wrapper construction has no Java entity constructor equivalent.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.create_multiple": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.non_default_constructor": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.participant": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-parent-links",
+      "upstream-default-container-qos"
+    ],
+    "reason": "Creates multiple independent containers, default/custom construction and parent identity.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.default_qos": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-default-endpoint-qos"
+    ],
+    "reason": "Default changes affect future endpoints and preserve existing endpoints and immutable QoS snapshots.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.use_after_close": {
+    "status": "partial",
+    "ctest": [
+      "upstream-close-cascade"
+    ],
+    "reason": "Closed getters and recursive containment checked; the full upstream list of closed operations is not yet ported. Java close is idempotent.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamEntityTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.use_after_deletion": {
+    "status": "not-applicable",
+    "ctest": [],
+    "reason": "Dereferencing the C++ null entity wrapper has no Java DDS method dispatch equivalent; Java null dereference is specified by the JVM.",
+    "sources": []
+  },
+  "cxx:src/ddscxx/tests/Subscriber.cpp:Subscriber.builtin": {
+    "status": "partial",
+    "ctest": [
+      "omg-discovery"
+    ],
+    "reason": "Java provides a working built-in subscriber and four readers. Upstream C++ currently asserts UnsupportedError, so behavior intentionally differs.",
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/OmgDiscoveryTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.optional_self_rejected": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-optional-self"
+    ],
+    "reason": "The exact upstream IDL is compiled and exercised in Java, including nested values; Java supports this form even though the C++ backend rejects it.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamRecursiveTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.optional_array_self_rejected": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-optional-array"
+    ],
+    "reason": "The exact upstream IDL is compiled and exercised in Java, including nested values; Java supports this form even though the C++ backend rejects it.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamRecursiveTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.optional_typedef_array_self_rejected": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-incomplete-array"
+    ],
+    "reason": "The core parser rejects the same incomplete typedef-array fixture with the expected diagnostic and leaves no generated source.",
+    "sources": [
+      "tests/upstream/reject_incomplete_array.cmake"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.external_union_case_rejected": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-external-union"
+    ],
+    "reason": "The exact upstream IDL is compiled and exercised in Java, including nested values; Java supports this form even though the C++ backend rejects it.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamRecursiveTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.optional_external_rejected": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-optional-external"
+    ],
+    "reason": "The exact upstream IDL is compiled and exercised in Java, including nested values; Java supports this form even though the C++ backend rejects it.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamRecursiveTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/CMakeLists.txt:IDLCXXRecursiveProbes.supported_recursive_type_forms": {
+    "status": "adapted",
+    "ctest": [
+      "upstream-recursive-mutual-sequence",
+      "upstream-recursive-optional-sequence",
+      "upstream-recursive-optional-typedef-sequence"
+    ],
+    "reason": "All three exact upstream compile-probe IDLs are generated, constructed and round-tripped; mutual cycles are rejected.",
+    "sources": [
+      "tests/java/org/eclipse/cyclonedds/tests/UpstreamRecursiveTest.java"
+    ]
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.implicit_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-read"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.read_LoanedSamples_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-read"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.read_FWIterator_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-read"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.read_BIIterator_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-read"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.take_LoanedSamples_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-take"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.take_FWIterator_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-take"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  },
+  "cxx:src/ddscxx/tests/DataReaderSelector.cpp:DataReaderSelector.take_BIIterator_state": {
+    "status": "partial",
+    "ctest": [
+      "upstream-selector-take"
+    ],
+    "sources": [
+      "tests/portable/org/eclipse/cyclonedds/tests/UpstreamStateTest.java"
+    ],
+    "reason": "All 128 masks verified against actual read/take results and cache consumption. The upstream multiple-samples-per-instance iterator variants still require separate equivalence review."
+  }
+}

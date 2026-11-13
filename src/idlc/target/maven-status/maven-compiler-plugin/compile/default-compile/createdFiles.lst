@@ -1,0 +1,4 @@
+org/eclipse/cyclonedds/idlc/IdlGenerator.class
+org/eclipse/cyclonedds/maven/GenerateMojo.class
+org/eclipse/cyclonedds/idlc/Idlc.class
+org/eclipse/cyclonedds/idlc/UniversalJar.class

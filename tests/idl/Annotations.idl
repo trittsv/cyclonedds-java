@@ -1,0 +1,77 @@
+/*
+ * Copyright(c) 2026 Sven Trittler
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0, or the Eclipse Distribution License
+ * v. 1.0 which is available at
+ * http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
+*/
+
+// Java mapping options do not change DDS wire types or names.
+@java_mapping(apply_naming_convention=JAVA_NAMING_CONVENTION, promote_integer_width=TRUE, string_type="java.lang.StringBuilder")
+module JAVA_MAPPED {
+  enum color_kind { red, dark_blue };
+  @final struct some_value {
+    uint8 tiny;
+    unsigned short small;
+    unsigned long medium;
+    unsigned long long big;
+    string<12> message_text;
+    wstring<12> wide_text;
+    sequence<unsigned long, 4> values;
+    sequence<unsigned long long, 4> big_values;
+    color_kind color;
+  };
+};
+module Recovery {
+  @appendable enum Kind { @default_literal @value(7) SEVEN, @value(9) NINE };
+  @final struct Text {
+    @try_construct(TRIM) string<4> trimmed;
+    @try_construct(USE_DEFAULT) @default("abc") string<4> defaulted;
+    @try_construct(TRIM) sequence<long, 2> numbers;
+    @try_construct(USE_DEFAULT) Kind kind;
+    long after;
+  };
+  @final struct Wide {
+    @try_construct(TRIM) wstring<4> trimmed;
+    @try_construct(USE_DEFAULT) wstring<4> defaulted;
+    long after;
+  };
+  @final struct Nested { sequence<@try_construct(TRIM) string<3> > texts; long after; };
+  @final union Choice switch(long) { case 1: @try_construct(TRIM) string<3> text; default: long number; };
+};
+module Marked {
+  @annotation PackageLabel { string value default "package"; };
+  @PackageLabel("marked") module Nested {
+    @PackageLabel("type") @final struct Local {
+      long before;
+      @non_serialized @default(17) long cache;
+      long after;
+    };
+  };
+};
+@java_mapping(string_type="java.lang.StringBuffer") module Buffered {
+  @final struct Text { string value; };
+};
+@java_mapping(apply_naming_convention=JAVA_NAMING_CONVENTION, constants_container="Numbers", promote_integer_width=TRUE)
+module SOME_CONSTANTS { const unsigned long maximum = 4294967295; const double pi = 3.14; };
+module MemberMapping {
+  @final struct Mixed {
+    @java_mapping(promote_integer_width=TRUE) unsigned long promoted;
+    unsigned long raw;
+    @java_mapping(string_type="java.lang.StringBuffer") string text;
+  };
+};
+@java_mapping(promote_integer_width=TRUE)
+module Promoted {
+  @final union Choice switch(unsigned long long) { case 1: unsigned long number; default: string text; };
+};
+module MemberUnion {
+  @final union Mixed switch(long) {
+    case 1: @java_mapping(promote_integer_width=TRUE) unsigned long number;
+    default: @java_mapping(string_type="java.lang.StringBuffer") string text;
+  };
+};

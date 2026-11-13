@@ -1,0 +1,22 @@
+/*
+ * Copyright(c) 2026 Sven Trittler
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0, or the Eclipse Distribution License
+ * v. 1.0 which is available at
+ * http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
+*/
+
+module Naming {
+ @final struct Base {long number;};
+ @final struct Derived : Base {long parent;};
+ @final struct java {string org; string text; long typeSupport; long get_foo; long foo; long hashCode; long CODEC; long TYPE;};
+ @final struct RuntimePrefixes {string java; string org; long codec;};
+};
+module QosEvolution {
+  @appendable struct Original { @id(0) long value; };
+  @appendable struct Extended { @id(0) long value; @id(1) long extra; };
+};

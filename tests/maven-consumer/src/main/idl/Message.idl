@@ -1,0 +1,4 @@
+// Copyright(c) 2026 Sven Trittler. SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
+module MavenDemo {
+  @final struct Message { @key long id; string text; };
+};

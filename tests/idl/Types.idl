@@ -1,0 +1,167 @@
+/*
+ * Copyright(c) 2026 Sven Trittler
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0, or the Eclipse Distribution License
+ * v. 1.0 which is available at
+ * http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
+*/
+
+module BindingTest {
+  enum Color { RED, GREEN, BLUE };
+  typedef unsigned long Identifier;
+  @final struct Position { double x; double y; };
+  @final struct Telemetry {
+    @key Identifier id;
+    boolean active;
+    char code;
+    octet flags;
+    short delta;
+    long long counter;
+    float temperature;
+    double measurement;
+    Color color;
+    Position position;
+    string<24> label;
+    sequence<octet, 16> payload;
+    sequence<long, 8> values;
+    sequence<double, 4> readings;
+  };
+  @final struct CompositeKey {
+    @key string<48> region;
+    @key long id;
+    string text;
+  };
+  @final struct Keyless { long value; };
+  @mutable struct KeylessMutable { long value; };
+  @final struct UpstreamBounded {
+    string<255> text;
+    sequence<long, 255> numbers;
+    sequence<boolean, 255> flags;
+  };
+  @final union KeyedChoice switch (@key long) { case 1: long number; default: string text; };
+  @appendable struct KeyedEvolving { @key long id; string text; };
+  @final struct NestedKeys { @key Position position; @key string region; string text; };
+  @final struct DelayedKey { string text; @key long id; };
+  @final struct EscapedNames { long class; long record; long hashCode; long CODEC; };
+  typedef long Grid[2][3];
+  @final struct Collections {
+    @key long id;
+    Grid grid;
+    Position points[2];
+    Color colors[2];
+    string names[2];
+    sequence<Position, 4> path;
+    sequence<string<12>, 4> labels;
+    sequence<Color, 4> palette;
+    sequence<sequence<long, 4>, 4> nested;
+  };
+  @final union Choice switch (long) {
+    case 1: long count;
+    case 2:
+    case 3: string<12> text;
+    default: Position point;
+  };
+  @final union ImplicitChoice switch (Color) { case RED: long number; };
+  @appendable struct Evolving { long id; string text; };
+  @final struct Envelope { Evolving payload; Choice choice; };
+};
+module Broader {
+ @final struct Base {@key long first;};
+ @final struct Derived : Base {long second;};
+ struct Node;
+ @appendable struct Node {long value; sequence<Node> children;};
+ @mutable struct Change { @id(7) @key long id; @id(19) @optional long opt; @id(21) @external string text; };
+ @final struct Wide { wchar ch; wstring<20> text; };
+ typedef sequence<long> Longs;
+ @final struct Arrays {Longs lists[2]; sequence<string> texts[2];};
+};
+module Broader {
+ @appendable struct OptionalFields {long before; @optional long number; @optional string text; @external long boxed; long after;};
+ @appendable struct BaseA {long first;};
+ @appendable struct DerivedA : BaseA {string second;};
+ @mutable struct BaseM { @id(1) @key long first;};
+ @mutable struct DerivedM : BaseM { @id(2) string second;};
+ @final struct Names {long get_foo; long foo; long set_foo; long memberValues; long TYPE;};
+ @final union BranchNames switch (long) { case 1: long discriminator; default: string text;};
+ @final struct Annotated { @default(5) @min(2) @max(9) long number; };
+};
+module Broader {
+ @mutable union MutableChoice switch (long) { case 1: @id(5) long number; default: @id(17) string text; };
+ @appendable union AppendableChoice switch (boolean) { case TRUE: long number; case FALSE: string text; };
+ @final union ShortChoice switch (short) { case -1: long number; default: string text; };
+ @final union OctetChoice switch (octet) { case 97: long number; default: string text; };
+};
+module Broader {
+ @annotation Label { string value default "unnamed"; long priority default 1; };
+ @Label(value="first", priority=2)
+ @final struct Labeled { @Label("field") long number; };
+ @bit_bound(8) enum Small { @value(2) TWO, @default_literal @value(7) SEVEN };
+ @final struct Enums {Small value; sequence<Small> values;};
+};
+module Broader {
+ @verbatim(language="java", placement=BEGIN_DECLARATION, text="public int injected() { return 42; }")
+ @final struct Injected { long number; };
+};
+module Broader {
+ @mutable union ExternalChoice switch (long) { case 1: @external long number; default: @external wstring text; };
+ struct Left;
+ struct Right;
+ @appendable struct Left { sequence<Right> next; };
+ @appendable struct Right { @optional Left next; };
+};
+module Broader { @final struct UnsignedRange { @default(4294967295) @min(2147483648) unsigned long value; }; };
+
+module XcdrTest {
+  @final struct EnumKeys { Broader::Small value; sequence<Broader::Small> values; Broader::Small array[2]; @key Broader::Small key; };
+  @final struct OptionalBeforeKey { @id(7) @optional long long value; @id(9) @key long id; };
+  @mutable struct Aligned { @id(7) @key long id; @id(19) long long value; @id(30000) @optional string note; @id(21) long after; };
+  @mutable struct OldMutable { @id(7) @key long id; @id(19) long long value; };
+  @mutable struct NewMutable { @id(19) long long value; @id(7) @key long id; @id(30000) @optional string note; };
+  @appendable struct OldAppendable { @key long id; };
+  @appendable struct NewAppendable { @key long id; string note; };
+  @final struct Nested { long prefix; Aligned member; OptionalBeforeKey optional; long suffix; };
+};
+
+module Broader {
+ union RecursiveChoice;
+ @appendable union RecursiveChoice switch (long) { case 0: @external RecursiveChoice next; default: long number; };
+ @appendable union OpenChoice switch (long) { case 1: long number; };
+};
+// Bounded XCDR1 appendable values: the outer parameter supplies the boundary.
+module XcdrTest {
+  @final struct TailOld { long prefix; OldAppendable payload; };
+  @final struct TailNew { long prefix; NewAppendable payload; };
+  @mutable struct WrappedOld { @id(7) @key long id; @id(19) TailOld payload; @id(21) long suffix; };
+  @mutable struct WrappedNew { @id(7) @key long id; @id(19) TailNew payload; @id(21) long suffix; };
+  @final struct OptionalOld { long prefix; @id(19) @optional OldAppendable payload; long suffix; };
+  @final struct OptionalNew { long prefix; @id(19) @optional NewAppendable payload; long suffix; };
+  @mutable union BranchOld switch(long) { case 1: @id(7) OldAppendable payload; default: @id(9) long other; };
+  @mutable union BranchNew switch(long) { case 1: @id(7) NewAppendable payload; default: @id(9) long other; };
+  @final struct UnionOld { long prefix; BranchOld payload; long suffix; };
+  @final struct UnionNew { long prefix; BranchNew payload; long suffix; };
+  @final struct UnsafeMiddle { OldAppendable payload; long suffix; };
+  @final struct UnsafeSequence { sequence<OldAppendable> payload; };
+  @final struct UnsafeArray { OldAppendable payload[2]; };
+};
+
+module XcdrTest {
+  struct RecursiveAppendable;
+  @appendable struct RecursiveAppendable { long value; @id(19) @optional RecursiveAppendable next; };
+  struct RecursiveMutable;
+  @mutable struct RecursiveMutable { @id(7) @key long id; @id(19) @optional RecursiveMutable next; };
+};
+
+module XcdrTest {
+  @final struct CollectionOld { sequence<WrappedOld> values; WrappedOld array[2]; long suffix; };
+  @final struct CollectionNew { sequence<WrappedNew> values; WrappedNew array[2]; long suffix; };
+};
+
+// Standalone appendable schemas do not inherit restrictions from unsafe uses.
+module StockXcdr1 {
+  @appendable struct Original { @key long id; };
+  @appendable struct Extended { @key long id; string note; };
+};

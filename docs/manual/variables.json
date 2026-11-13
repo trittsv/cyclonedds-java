@@ -1,0 +1,10 @@
+{
+    "core-project": "Eclipse Cyclone DDS",
+    "core-project-short": "Cyclone DDS",
+    "project": "Cyclone DDS: Java API",
+    "project-short": "Cyclone DDS Java",
+    "copyright": ":year:, Cyclone DDS Java contributors",
+    "author": "Cyclone DDS Java contributors",
+    "version": "11.0.1",
+    "release": "11.0.1"
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <unzip src="/Users/sventrittler/workspace/trittsv/cyc-java/build/org.eclipse.cyclonedds.idlc-11.0.1.jar" dest="/Users/sventrittler/workspace/trittsv/cyc-java/src/idlc/target/classes">
+      <patternset>
+        <include name="META-INF/cyclonedds-idlc/**" />
+        <include name="META-INF/cyclonedds/**" />
+      </patternset>
+    </unzip>
+  </target>
+</project>

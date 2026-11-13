@@ -1,0 +1,63 @@
+<!--
+Copyright(c) 2026 Sven Trittler
+
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License v. 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0, or the Eclipse Distribution License
+v. 1.0 which is available at
+http://www.eclipse.org/org/documents/edl-v10.php.
+
+SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.cyclonedds</groupId>
+  <artifactId>org.eclipse.cyclonedds</artifactId>
+  <version>11.0.1</version>
+  <description>Experimental Java binding for Eclipse Cyclone DDS</description>
+  <licenses>
+    <license>
+      <name>Eclipse Public License 2.0</name>
+      <url>https://www.eclipse.org/legal/epl-2.0/</url>
+      <distribution>repo</distribution>
+      <comments>Alternatively available under the Eclipse Distribution License 1.0.</comments>
+    </license>
+    <license>
+      <name>Eclipse Distribution License 1.0</name>
+      <url>https://www.eclipse.org/org/documents/edl-v10.php</url>
+      <distribution>repo</distribution>
+      <comments>Alternative to the Eclipse Public License 2.0; see LICENSE.</comments>
+    </license>
+  </licenses>
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <build>
+    <sourceDirectory>${project.basedir}/src/java</sourceDirectory>
+    <resources><resource><directory>${project.basedir}</directory><targetPath>META-INF</targetPath>
+      <includes><include>LICENSE</include><include>THIRD_PARTY_NOTICES.md</include></includes>
+    </resource><resource><directory>third_party/omg-dds</directory><targetPath>META-INF/omg-dds</targetPath>
+      <includes><include>LICENSE</include><include>NOTICE</include></includes>
+    </resource></resources>
+    <plugins><plugin>
+    <groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.1</version>
+    <executions><execution><id>omg-api</id><phase>generate-sources</phase><goals><goal>add-source</goal></goals>
+      <configuration><sources><source>third_party/omg-dds/src</source></sources></configuration>
+    </execution></executions>
+  </plugin><plugin>
+    <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version>
+  </plugin></plugins></build>
+  <profiles><profile>
+    <id>runtime-bundle</id><activation><property><name>cyclonedds.runtime.jar</name></property></activation>
+    <build><plugins><plugin>
+      <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId><version>3.1.0</version>
+      <executions><execution><id>use-runtime-jar</id><phase>package</phase><goals><goal>run</goal></goals>
+        <configuration><target>
+          <copy file="${cyclonedds.runtime.jar}" tofile="${project.build.directory}/${project.build.finalName}.jar" overwrite="true"/>
+        </target></configuration>
+      </execution></executions>
+    </plugin></plugins></build>
+  </profile></profiles>
+</project>
