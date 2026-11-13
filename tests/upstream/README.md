@@ -9,8 +9,6 @@ http://www.eclipse.org/org/documents/edl-v10.php.
 
 SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
 -->
-
-<!-- SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause -->
 # Upstream test comparison
 
 Fresh official Python and C++ checkouts were downloaded on 2026-10-23. Their

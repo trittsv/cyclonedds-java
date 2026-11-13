@@ -9,8 +9,6 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
 */
-
-/* SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause */
 #include <stdio.h>
 #include "dds/dds.h"
 #include "Types.h"
