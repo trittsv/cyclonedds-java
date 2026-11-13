@@ -1,0 +1,175 @@
+name: Universal Java distribution
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            platform: linux-x86_64
+          - runner: ubuntu-24.04-arm
+            platform: linux-aarch64
+          - runner: macos-15
+            platform: macos-aarch64
+          - runner: windows-2022
+            platform: windows-x86_64
+    runs-on: ${{ matrix.runner }}
+    env:
+      CMAKE_GENERATOR: ${{ matrix.platform == 'windows-x86_64' && 'Ninja' || 'Unix Makefiles' }}
+      CMAKE_BUILD_TYPE: Release
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Configure MSVC for x86-64
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $before = @{}
+          Get-ChildItem Env: | ForEach-Object { $before[$_.Name] = $_.Value }
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $installation = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $installation) { throw 'Visual Studio C++ tools were not found' }
+          & "$installation\Common7\Tools\Launch-VsDevShell.ps1" -Arch amd64 -HostArch amd64 -SkipAutomaticLocation
+          Get-ChildItem Env: | Where-Object { $before[$_.Name] -cne $_.Value } | ForEach-Object {
+              "$($_.Name)=$($_.Value)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          }
+      - name: Build matching Cyclone DDS core
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+          import subprocess
+
+          root = Path(os.environ["RUNNER_TEMP"])
+          source, build, install = (root / name for name in ("core", "core-build", "core-install"))
+          def run(*args):
+              subprocess.run(list(map(str, args)), check=True)
+          run("git", "clone", "https://github.com/eclipse-cyclonedds/cyclonedds.git", source)
+          run("git", "-C", source, "checkout", "3a5526315e64ac1d2a52e6ac1ae7f3e861c593d3")
+          run("cmake", "-S", source, "-B", build, "-DCMAKE_INSTALL_PREFIX=" + install.as_posix(),
+              "-DBUILD_TESTING=OFF", "-DBUILD_EXAMPLES=OFF", "-DENABLE_SECURITY=OFF", "-DENABLE_SSL=OFF")
+          run("cmake", "--build", build, "--parallel", "4")
+          run("cmake", "--install", build)
+          if os.name == "nt":
+              with open(os.environ["GITHUB_PATH"], "a", encoding="utf-8") as output:
+                  print(install / "bin", file=output)
+      - name: Build and test platform components
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+          import subprocess
+
+          prefix = (Path(os.environ["RUNNER_TEMP"]) / "core-install").as_posix()
+          def run(command):
+              result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                      text=True, encoding="utf-8", errors="replace")
+              print(result.stdout, end="", flush=True)
+              if result.returncode:
+                  message = result.stdout[-12000:].replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+                  print("::error::" + message, flush=True)
+                  raise SystemExit(result.returncode)
+          run(["cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=" + prefix,
+               "-DJAVA_HOME=" + Path(os.environ["JAVA_HOME"]).as_posix(), "-DBUILD_MAVEN_TESTING=ON"])
+          run(["cmake", "--build", "build", "--parallel", "4"])
+          run(["ctest", "--test-dir", "build", "--output-on-failure", "-j", "2",
+               "--output-junit", "test-results.xml"])
+      - name: Report failed tests
+        if: failure()
+        shell: python
+        run: |
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          report = Path("build/test-results.xml")
+          if report.is_file():
+              for case in ET.parse(report).iter("testcase"):
+                  if case.find("failure") is None:
+                      continue
+                  output = case.findtext("system-out", "No test output recorded.")
+                  message = (case.attrib["name"] + "\n" + output)[-12000:]
+                  message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+                  print("::error::" + message)
+      - uses: actions/upload-artifact@v7
+        with:
+          name: platform-${{ matrix.platform }}
+          path: build/*-${{ matrix.platform }}.jar
+          if-no-files-found: error
+  assemble:
+    needs: platform
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: platform-*
+          path: platform-inputs
+      - name: Assemble all required platforms and Maven artifacts
+        shell: bash
+        run: |
+          VERSION=$(python3 -c 'import xml.etree.ElementTree as E; print(E.parse("pom.xml").getroot().find("{http://maven.apache.org/POM/4.0.0}version").text)')
+          mkdir -p dist
+          for KIND in runtime compiler; do
+            if [ "$KIND" = runtime ]; then ARTIFACT=org.eclipse.cyclonedds; else ARTIFACT=org.eclipse.cyclonedds.idlc; fi
+            java -cp "platform-inputs/platform-linux-x86_64/org.eclipse.cyclonedds.idlc-${VERSION}-linux-x86_64.jar" \
+              org.eclipse.cyclonedds.idlc.UniversalJar --kind "$KIND" \
+              --output "dist/${ARTIFACT}-${VERSION}.jar" --version "$VERSION" \
+              --platforms linux-x86_64,linux-aarch64,macos-aarch64,windows-x86_64 --input-dir platform-inputs
+          done
+          mvn -B -ntp -f maven/pom.xml \
+            "-Dcyclonedds.runtime.jar=$PWD/dist/org.eclipse.cyclonedds-${VERSION}.jar" \
+            "-Dcyclonedds.idlc.jar=$PWD/dist/org.eclipse.cyclonedds.idlc-${VERSION}.jar" package
+          cp "src/idlc/target/org.eclipse.cyclonedds.idlc-${VERSION}.jar" dist/
+          cp pom.xml "dist/org.eclipse.cyclonedds-${VERSION}.pom"
+          cp maven/pom.xml "dist/org.eclipse.cyclonedds-build-${VERSION}.pom"
+          cp src/idlc/pom.xml "dist/org.eclipse.cyclonedds.idlc-${VERSION}.pom"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: universal-java
+          path: dist/*
+          if-no-files-found: error
+  verify-universal:
+    needs: assemble
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm, macos-15, windows-2022]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/download-artifact@v8
+        with:
+          name: universal-java
+          path: release
+      - name: Run the same runtime/compiler pair on each host
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import xml.etree.ElementTree as ET
+
+          version = ET.parse("pom.xml").getroot().find("{http://maven.apache.org/POM/4.0.0}version").text
+          root = Path.cwd()
+          java = Path(os.environ["JAVA_HOME"]) / "bin"
+          subprocess.run([sys.executable, "tests/idlc_bundle.py", str(java / "java"), str(java / "javac"),
+                          str(root / "release" / f"org.eclipse.cyclonedds.idlc-{version}.jar"),
+                          str(root / "release" / f"org.eclipse.cyclonedds-{version}.jar"), str(root)], check=True)
