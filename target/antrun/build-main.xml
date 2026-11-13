@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="maven-antrun-" default="main">
-  <target name="main">
-    <copy file="/Users/sventrittler/workspace/trittsv/cyc-java/build/org.eclipse.cyclonedds-11.0.1.jar" tofile="/Users/sventrittler/workspace/trittsv/cyc-java/target/org.eclipse.cyclonedds-11.0.1.jar" overwrite="true" />
-  </target>
-</project>
