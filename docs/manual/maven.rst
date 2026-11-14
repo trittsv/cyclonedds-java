@@ -152,7 +152,7 @@ normally runtime and compiler use the same Cyclone DDS version.
 Maintainer packaging
 --------------------
 
-Compiler sources and the compiler Maven module live in ``src/idlc``. The
+Compiler sources and the compiler Maven module live in ``src/buildtools``. The
 repository root contains the runtime Maven module; ``maven/pom.xml`` builds both.
 
 A CMake build creates two distribution JARs:

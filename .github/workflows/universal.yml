@@ -142,10 +142,10 @@ jobs:
           mvn -B -ntp -f maven/pom.xml \
             "-Dcyclonedds.runtime.jar=$PWD/dist/org.eclipse.cyclonedds-${VERSION}.jar" \
             "-Dcyclonedds.idlc.jar=$PWD/dist/org.eclipse.cyclonedds.idlc-${VERSION}.jar" package
-          cp "src/idlc/target/org.eclipse.cyclonedds.idlc-${VERSION}.jar" dist/
+          cp "src/buildtools/target/org.eclipse.cyclonedds.idlc-${VERSION}.jar" dist/
           cp pom.xml "dist/org.eclipse.cyclonedds-${VERSION}.pom"
           cp maven/pom.xml "dist/org.eclipse.cyclonedds-build-${VERSION}.pom"
-          cp src/idlc/pom.xml "dist/org.eclipse.cyclonedds.idlc-${VERSION}.pom"
+          cp src/buildtools/pom.xml "dist/org.eclipse.cyclonedds.idlc-${VERSION}.pom"
       - uses: actions/upload-artifact@v7
         with:
           name: universal-java

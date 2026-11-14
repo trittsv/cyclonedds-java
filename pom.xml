@@ -35,7 +35,7 @@ SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <build>
-    <sourceDirectory>${project.basedir}/src/java</sourceDirectory>
+    <sourceDirectory>${project.basedir}/src/ddsjava</sourceDirectory>
     <resources><resource><directory>${project.basedir}</directory><targetPath>META-INF</targetPath>
       <includes><include>LICENSE</include><include>THIRD_PARTY_NOTICES.md</include></includes>
     </resource><resource><directory>third_party/omg-dds</directory><targetPath>META-INF/omg-dds</targetPath>

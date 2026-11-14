@@ -138,15 +138,17 @@ mapped accessors. :doc:`Standards coverage <standards>` explains the remaining g
      - Responsibility
    * - ``third_party/omg-dds``\
      - Unmodified normative DDS-Java API
-   * - ``src/java/.../omg``\
+   * - ``src/ddsjava/.../omg``\
      - Service provider, entities, supported QoS, values and samples
    * - ``src/idljava``\
      - IDL compiler backend
-   * - ``src/java/org/omg/type``\
+   * - ``src/buildtools``\
+     - IDL compiler launcher, compiler packaging and Maven integration
+   * - ``src/ddsjava/org/omg/type``\
      - IDL4-Java primitive sequence interfaces
-   * - ``src/java/.../type/seq``\
+   * - ``src/ddsjava/.../type/seq``\
      - Primitive sequence implementations
-   * - ``src/java/.../core/cdr``\
+   * - ``src/ddsjava/.../core/cdr``\
      - Java CDR codec runtime
    * - ``src/jni``\
      - JNI calls into Cyclone DDS and generic DDSI type/sample support
@@ -159,10 +161,10 @@ mapped accessors. :doc:`Standards coverage <standards>` explains the remaining g
    * - ``tests/c``\
      - Independent C interoperability peer
 
-The runtime sources (``src/java`` and ``src/jni``) sit alongside the compiler
-backend (``src/idljava``), following the sibling-component layout of the reference
-bindings. CMake uses these paths directly; Maven explicitly configures
-``src/java`` as its source directory.
+The runtime sources (``src/ddsjava`` and ``src/jni``) sit alongside the compiler
+backend (``src/idljava``) and build tools (``src/buildtools``), following the
+sibling-component layout of the reference bindings. CMake uses these paths
+directly; Maven explicitly configures ``src/ddsjava`` as its source directory.
 
 ``src/jni`` is the Java binding's native integration layer. ``bridge.c``
 implements JNI entry points, native entity operations, listeners and filters;
