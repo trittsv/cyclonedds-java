@@ -1,16 +1,9 @@
-<!--
-Copyright(c) 2026 Sven Trittler
+# Java Binding for Eclipse Cyclone DDS
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License v. 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0, or the Eclipse Distribution License
-v. 1.0 which is available at
-http://www.eclipse.org/org/documents/edl-v10.php.
+[![Website](https://img.shields.io/badge/web-cyclonedds.io-blue)](https://cyclonedds.io)
+[![Community](https://img.shields.io/badge/discord-join%20community-5865f2)](https://discord.gg/BkRYQPpZVV)
 
-SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
--->
-
-# Cyclone DDS Java
+The official Java binding for [Eclipse Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds).
 
 Java binding for Cyclone DDS using the **official OMG DDS-Java API** and generated
 IDL4-Java types. Two clearly separated artifacts are provided:
